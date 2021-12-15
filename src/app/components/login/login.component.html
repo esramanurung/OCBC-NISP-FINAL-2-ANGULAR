@@ -1,0 +1,21 @@
+<div class="auth-wrapper">
+    <form class="form-loginForm" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <h3 class="h3 mb-3 font-weight-normal text-center">Home Page Login</h3>
+        <div class="form-group mt-3">
+            <label >Email :</label>
+            <input type="email" class="form-control" formControlName="Email" placeholder="Entry Email  " required>
+            <span style="color: red;" *ngIf="Email && Email.touched && Email.invalid">
+                Email Must not be empty. 
+            </span>
+        </div>
+        <div class="form-group mt-3">
+            <label >Password :</label>
+            <input type="password" class="form-control" formControlName="Password" placeholder="Entry Password " required>
+            <span style="color: red;" *ngIf="Password && Password.touched && Password.invalid">
+                Password Must not be empty.
+            </span>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-info btn-lg container d-flex justify-content-center">Login</button>  
+    </form>
+</div>

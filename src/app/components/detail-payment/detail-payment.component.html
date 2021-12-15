@@ -1,0 +1,28 @@
+<!-- <p>detail-payment works!</p> -->
+<app-navbar></app-navbar>
+<div class="row justify-content-md-center">
+  <div class="col-md-4">
+    <app-add-detail-payment></app-add-detail-payment>
+  </div>
+  <div class="col-md-5">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Card Owner</th>
+          <th scope="col">Card Number</th>
+          <th scope="col">Exp Date</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pdt of paymentDetails; let i=index">
+          <th>{{ pdt.cardOwnerName }}</th>
+          <td>{{ pdt.cardNumber }}</td>
+          <td>{{ pdt.expirationDate }}</td>
+          <td><a [routerLink]="['/update/',pdt.paymentDetailId]"class="btn btn-dark">Update</a>
+          <td><button class="btn btn-danger" (click)="deletePaymentDetail(pdt.paymentDetailId)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
